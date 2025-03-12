@@ -1,7 +1,6 @@
 import argparse
 import torch
 from pathlib import Path
-from extractor import ViTExtractor
 from tqdm import tqdm
 import numpy as np
 from sklearn.cluster import KMeans
@@ -10,6 +9,7 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 from typing import List, Tuple
 
+from scenecomplete.modules.dino_vit_features.extractor import ViTExtractor
 
 def find_correspondences(image_path1: str, image_path2: str, num_pairs: int = 10, load_size: int = 224, layer: int = 9,
                          facet: str = 'key', bin: bool = True, thresh: float = 0.05, model_type: str = 'dino_vits8',
